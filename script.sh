@@ -20,6 +20,8 @@ do
 	date_diff=$(( (date_s - now_s) / 86400 ))
 	if [ $date_diff -eq 73 ];then
 	seven_days_expiration+="$line\n"
+	echo "hi"
+	echo -e "${seven_days_expiration}"
 	elif [ $date_diff -eq 15 ];then
 	fifteen_days_expiration+=("$line")
 	elif [ $date_diff -eq 30 ];then
