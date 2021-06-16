@@ -19,7 +19,7 @@ do
 	now_s=$(date -d now +%s)
 	date_diff=$(( (date_s - now_s) / 86400 ))
 	if [ $date_diff -eq 73 ];then
-	seven_days_expiration+=("$line"\n)
+	seven_days_expiration+=("$line\n")
 	elif [ $date_diff -eq 15 ];then
 	fifteen_days_expiration+=("$line")
 	elif [ $date_diff -eq 30 ];then
@@ -30,7 +30,7 @@ done < Application-Urls.txt
 
 	if  [[ ${seven_days_expiration[@]} ]]; then
     	echo "${seven_days_expiration[*]} certificates will expire in 73 days"
-	echo "${seven_days_expiration[*]}" > seven_days_expiration.txt
+	echo -e "${seven_days_expiration[*]}" > seven_days_expiration.txt
 	fi
 	if  [[ ${fifteen_days_expiration[@]} ]]; then
     	echo "${fifteen_days_expiration[*]} certificates will expire in 15 days"
