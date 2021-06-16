@@ -29,8 +29,9 @@ do
 done < Application-Urls.txt
 
 	if  [[ ${seven_days_expiration[@]} ]]; then
-	seven_days_expiration=echo "${seven_days_expiration[*]}" | sed 's/.$//'
-    	echo "The Application URLS ${seven_days_expiration} certificates will expire in 73 days"
+	echo "tej"
+	echo "${seven_days_expiration[*]}" | sed 's/.$//'
+    	echo "The Application URLS ${seven_days_expiration[*]} certificates will expire in 73 days"
 	echo "${seven_days_expiration[*]}" | sed 's/.$//' > seven_days_expiration.txt
 	fi
 	if  [[ ${fifteen_days_expiration[@]} ]]; then
