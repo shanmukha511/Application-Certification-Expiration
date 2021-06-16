@@ -30,8 +30,9 @@ done < Application-Urls.txt
 
 	if  [[ ${seven_days_expiration[@]} ]]; then
 	echo "tej"
-	echo "${seven_days_expiration[*]}" | sed 's/.$//'
-    	echo "The Application URLS ${seven_days_expiration[*]} certificates will expire in 73 days"
+	echo "${seven_days_expiration[*]}" | sed 's/.$//' > seven_days_expiration.txt
+	test=cat seven_days_expiration.txt
+    	echo "The Application URLS $test certificates will expire in 73 days"
 	echo "${seven_days_expiration[*]}" | sed 's/.$//' > seven_days_expiration.txt
 	fi
 	if  [[ ${fifteen_days_expiration[@]} ]]; then
