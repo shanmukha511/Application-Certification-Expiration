@@ -29,14 +29,14 @@ do
 done < Application-Urls.txt
 
 	if  [[ ${seven_days_expiration[@]} ]]; then
-    	echo "${seven_days_expiration[*]} | sed 's/.$//' certificates will expire in 73 days"
+    	echo "${seven_days_expiration[*]} certificates will expire in 73 days"
 	echo "${seven_days_expiration[*]}" | sed 's/.$//' > seven_days_expiration.txt
 	fi
 	if  [[ ${fifteen_days_expiration[@]} ]]; then
-    	echo "${fifteen_days_expiration[*]} | sed 's/.$//' certificates will expire in 53 days"
+    	echo "${fifteen_days_expiration[*]} certificates will expire in 53 days"
         echo "${fifteen_days_expiration[*]}" | sed 's/.$//' > fifteen_days_expiration.txt
 	fi
 	if  [[ ${thirty_days_expiration[@]} ]]; then
-    	echo "${thirty_days_expiration[*]} | sed 's/.$//' certificates will expire in 69 days"
+    	echo "${thirty_days_expiration[*]}  certificates will expire in 69 days"
         echo "${thirty_days_expiration[*]}" | sed 's/.$//'> thirty_days_expiration.txt
 	fi
