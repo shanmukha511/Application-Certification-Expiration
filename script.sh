@@ -29,19 +29,18 @@ do
 done < Application-Urls.txt
 
 	if  [[ ${seven_days_expiration[@]} ]]; then
-	echo "tej"
 	echo "${seven_days_expiration[*]}" | sed 's/.$//' > seven_days_expiration.txt
-	test=`cat seven_days_expiration.txt`
-    	echo "The Application URLS $test certificates will expire in 73 days"
-	echo "${seven_days_expiration[*]}" | sed 's/.$//' > seven_days_expiration.txt
+	seven_days_expiration=`cat seven_days_expiration.txt`
+    	echo "The Application URLS $seven_days_expiration certificates will expire in 73 days"
 	fi
 	if  [[ ${fifteen_days_expiration[@]} ]]; then
-	fifteen_days_expiration=echo "${fifteen_days_expiration[*]}" | sed 's/.$//'
+	echo "${fifteen_days_expiration[*]}" | sed 's/.$//' > fifteen_days_expiration.txt
+	fifteen_days_expiration=`cat fifteen_days_expiration.txt`
     	echo "The Application URLS ${fifteen_days_expiration} certificates will expire in 53 days"
-        echo "${fifteen_days_expiration[*]}" | sed 's/.$//' > fifteen_days_expiration.txt
+        
 	fi
 	if  [[ ${thirty_days_expiration[@]} ]]; then
-	thirty_days_expiration=echo "${thirty_days_expiration[*]}" | sed 's/.$//'
-    	echo "The Application URLS ${thirty_days_expiration}  certificates will expire in 69 days"
         echo "${thirty_days_expiration[*]}" | sed 's/.$//'> thirty_days_expiration.txt
+	thirty_days_expiration=`cat thirty_days_expiration.txt`
+    	echo "The Application URLS ${thirty_days_expiration}  certificates will expire in 69 days"
 	fi
