@@ -11,7 +11,7 @@ declare -a thirty_days_expiration
 
 while IFS= read -r line || [ -n "$line" ];
 do
-    echo "Checking Certificate Expiration Date for $line" 
+        echo "Checking Certificate Expiration Date for $line" 
 	certificate_file=$(mktemp)
 	echo -n | openssl s_client -connect "$line" 2>/dev/null | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > $certificate_file
 	date=$(openssl x509 -in $certificate_file -enddate -noout | sed "s/.*=\(.*\)/\1/")
@@ -20,9 +20,9 @@ do
 	date_diff=$(( (date_s - now_s) / 86400 ))
 	if [ $date_diff -eq 73 ];then
 	seven_days_expiration+=("$line,")
-	elif [ $date_diff -eq 15 ];then
+	elif [ $date_diff -eq 53 ];then
 	fifteen_days_expiration+=("$line,")
-	elif [ $date_diff -eq 30 ];then
+	elif [ $date_diff -eq 69 ];then
 	thirty_days_expiration+=("$line,")
 	fi
 	rm "$certificate_file"
