@@ -29,14 +29,14 @@ do
 done < Application-Urls.txt
 
 	if  [[ ${seven_days_expiration[@]} ]]; then
-        echo "${seven_days_expiration[*]} > seven_days_expiration.txt
     	echo "${seven_days_expiration[*]} certificates will expire in 73 days"
+	echo "${seven_days_expiration[*]}" > seven_days_expiration.txt
 	fi
 	if  [[ ${fifteen_days_expiration[@]} ]]; then
     	echo "${fifteen_days_expiration[*]} certificates will expire in 15 days"
-        echo "${fifteen_days_expiration[*]} > fifteen_days_expiration.txt
+        echo "${fifteen_days_expiration[*]}" > fifteen_days_expiration.txt
 	fi
 	if  [[ ${thirty_days_expiration[@]} ]]; then
     	echo "${thirty_days_expiration[*]} certificates will expire in 30 days"
-        echo "${thirty_days_expiration[*]} > thirty_days_expiration.txt
+        echo "${thirty_days_expiration[*]} "> thirty_days_expiration.txt
 	fi
