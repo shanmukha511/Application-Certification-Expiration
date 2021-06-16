@@ -19,11 +19,11 @@ do
 	now_s=$(date -d now +%s)
 	date_diff=$(( (date_s - now_s) / 86400 ))
 	if [ $date_diff -eq 73 ];then
-	seven_days_expiration+="$line,"
+	seven_days_expiration+=("$line,")
 	elif [ $date_diff -eq 15 ];then
-	fifteen_days_expiration+=("$line")
+	fifteen_days_expiration+=("$line,")
 	elif [ $date_diff -eq 30 ];then
-	thirty_days_expiration+=("$line")
+	thirty_days_expiration+=("$line,")
 	fi
 	rm "$certificate_file"
 done < Application-Urls.txt
@@ -34,9 +34,9 @@ done < Application-Urls.txt
 	fi
 	if  [[ ${fifteen_days_expiration[@]} ]]; then
     	echo "${fifteen_days_expiration[*]} certificates will expire in 15 days"
-        echo "${fifteen_days_expiration[*]}" > fifteen_days_expiration.txt
+        echo "${fifteen_days_expiration[*]}" | sed 's/.$//' > fifteen_days_expiration.txt
 	fi
 	if  [[ ${thirty_days_expiration[@]} ]]; then
     	echo "${thirty_days_expiration[*]} certificates will expire in 30 days"
-        echo "${thirty_days_expiration[*]} "> thirty_days_expiration.txt
+        echo "${thirty_days_expiration[*]}" | sed 's/.$//'> thirty_days_expiration.txt
 	fi
