@@ -32,7 +32,7 @@ done < Application-Urls.txt
 
 	if  [[ ${seven_days_expiration[@]} ]]; then
     	echo "${seven_days_expiration[*]} certificates will expire in 73 days"
-	echo -e "${seven_days_expiration[*]}" > seven_days_expiration.txt
+	echo -e "${seven_days_expiration}" > seven_days_expiration.txt
 	fi
 	if  [[ ${fifteen_days_expiration[@]} ]]; then
     	echo "${fifteen_days_expiration[*]} certificates will expire in 15 days"
