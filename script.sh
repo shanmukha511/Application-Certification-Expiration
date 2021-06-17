@@ -18,11 +18,11 @@ do
 	date_s=$(date -d "${date}" +%s)
 	now_s=$(date -d now +%s)
 	date_diff=$(( (date_s - now_s) / 86400 ))
-	if [ $date_diff -eq 73 ];then
+	if [ $date_diff -eq 72 ];then
 	seven_days_expiration+=("$line,")
-	elif [ $date_diff -eq 53 ];then
+	elif [ $date_diff -eq 59 ];then
 	fifteen_days_expiration+=("$line,")
-	elif [ $date_diff -eq 69 ];then
+	elif [ $date_diff -eq 68 ];then
 	thirty_days_expiration+=("$line,")
 	fi
 	rm "$certificate_file"
